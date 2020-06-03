@@ -113,7 +113,7 @@ a {
 
   font-size: 16px;
   line-height: 18px;
-  font-weight: 500px;
+  font-weight: 500;
   text-align: center;
 
   color: var(--basic-white);
@@ -136,12 +136,22 @@ a {
   box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 }
 
+.container {
+  width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.main-header {
+  background-color: var(--basic-extra-light);
+}
+
 .main-navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 50px 140px 0px;
+  padding-top: 50px;
 
   font-weight: 500;
   font-size: 16px;
@@ -149,8 +159,6 @@ a {
   text-transform: uppercase;
 
   color: var(--basic-black);
-
-  background-color: var(--basic-extra-light);
 }
 
 .main-header-logo:active {
@@ -236,23 +244,16 @@ a {
 .features {
   position: relative;
 
-  margin: 0px;
-  padding: 0px 140px;
-
   background-color: var(--basic-extra-light);
 }
 
 .features-description {
-  min-height: 413px;
-}
-
-.features-description p {
-  width: 538px;
+  min-height: 415px;
+  padding-right: 624px;
 }
 
 .features-accent {
   padding-top: 68px;
-  width: 538px;
 
   font-weight: 500;
   font-size: 55px;
@@ -306,13 +307,15 @@ a {
   border-radius: 50%;
 }
 
+.services {
+  padding-top: 85px;
+  padding-bottom: 121px;
+}
+
 .services-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 100px;
-
-  margin: 88px 200px 121px 140px;
-
+  column-gap: 42px;
   list-style: none;
 }
 
@@ -340,7 +343,7 @@ a {
 
   font-size: 24px;
   line-height: 30px;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
 
   color: var(--basic-black);
@@ -354,7 +357,6 @@ a {
 
 .services-item a {
   width: 160px;
-  height: 50px;
 }
 
 .button-apps {
@@ -372,7 +374,6 @@ a {
   background-color: var(--special-green-dark);
   box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 }
-
 
 .button-presentations {
   background-color: var(--special-yellow-light);
@@ -395,8 +396,6 @@ a {
   flex-direction: row;
   justify-content: space-between;
 
-  padding: 0px 140px;
-  margin-bottom: 106px;
 }
 
 .info-description {
@@ -415,7 +414,7 @@ a {
 .info-description h4 {
   padding: 40px 0px 23px;
 
-  font-weight: 900;
+  font-weight: 700;
   font-size: 16px;
   line-height: 24px;
 
@@ -452,7 +451,7 @@ a {
 
 .info-metrics h4 {
   margin-top: 30px;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 16px;
   line-height: 24px;
 
@@ -485,16 +484,12 @@ a {
   line-height: 40px;
 }
 
-.clients {
-  padding: 0px 183px 0px 172px;
-  margin-bottom: 110px;
-}
-
 .clients-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 100px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+
+  padding: 105px 30px 113px;
 
   list-style: none;
 }
@@ -513,20 +508,18 @@ a {
 }
 
 .contacts {
-  display: flex;
-  height: 416px;
-
-  padding-left: 140px;
-
+  padding-top: 54px;
+  padding-bottom: 54px;
   background-color: var(--basic-extra-light);
 }
 
 .contacts-description {
-  width: 319px;
-  height: 308px;
+  max-width: 320px;
 
-  margin-top: 54px;
-  padding: 50px 47px;
+  padding-top: 49px;
+  padding-right: 50px;
+  padding-bottom: 47px;
+  padding-left: 50px;
 
   background-color: var(--basic-white);
 }
@@ -535,7 +528,7 @@ a {
   display: block;
   margin-bottom: 23px;
 
-  font-weight: 900;
+  font-weight: 700;
   font-size: 18px;
   line-height: 30px;
   text-transform: uppercase;
@@ -554,17 +547,20 @@ a {
   color: var(--basic-grey);
 }
 
+.contacts-description p {
+  margin-bottom: 37px;
+}
+
 .contacts-tel {
   color: var(--basic-grey);
 }
 
-.contacts-description a {
-  margin-top: 33px;
-}
-
 .social {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+
+  padding-top: 68px;
+  padding-bottom: 68px;
 }
 
 .social-buttons-list {
@@ -572,7 +568,7 @@ a {
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 10px;
 
-  margin: 68px 140px;
+  margin-right: 139px;
 
   list-style: none;
 }
@@ -603,12 +599,8 @@ a {
   opacity: 0.3;
 }
 
-.social-description {
-  margin: 75px 240px 75px 0px;
-}
-
 .social-description h2 {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 36px;
   line-height: 36px;
 
@@ -624,14 +616,17 @@ a {
 }
 
 .catalog-title {
-  padding: 67px 347px 108px 348px;
+  padding-top: 68px;
+  padding-bottom: 108px;
+
+  text-align: center;
 
   background-color: var(--basic-extra-light);
 }
 
 .catalog-title h1 {
   margin: 0px;
-  padding: 0px;
+
   font-weight: 500;
   font-size: 55px;
   line-height: 55px;
@@ -643,12 +638,12 @@ a {
   display: flex;
   justify-content: space-between;
 
-  padding: 55px 140px 60px 127px;
+  padding-top: 55px;
+  padding-bottom: 60px;
 }
 
 .catalog-filters {
   max-width: 260px;
-  margin-right: 140px;
 }
 
 .catalog-filters-form fieldset {
@@ -656,7 +651,7 @@ a {
 }
 
 .catalog-filters-title {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 18px;
   line-height: 30px;
   text-transform: uppercase;
@@ -819,7 +814,7 @@ a {
   display: block;
   margin: 26px 0px 12px;
 
-  font-weight: 900;
+  font-weight: 700;
   font-size: 18px;
   line-height: 30px;
   text-transform: uppercase;
