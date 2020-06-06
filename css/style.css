@@ -181,8 +181,7 @@ a {
   margin-right: 44px;
 }
 
-.site-navigation a,
-.button-cart {
+.nav-link {
   position: relative;
   display: block;
 
@@ -213,21 +212,17 @@ a {
   left: -41px;
 }
 
-.site-navigation a:hover,
-.site-navigation a:focus,
-.button-cart:hover,
-.button-cart:focus {
+.nav-link:hover,
+.nav-link:focus {
   color: var(--special-red-light);
 }
 
-.site-navigation a:active,
-.button-cart:active {
+.nav-link:active {
   color: var(--basic-black);
   opacity: 0.3;
 }
 
-.site-navigation a:not([href])::after,
-.button-cart:not([href])::after {
+.site-navigation .active::after {
   content: "";
 
   position: absolute;
@@ -295,8 +290,8 @@ a {
 .features-slider-control {
   position: absolute;
 
-  left: 676px;
-  bottom: 90px;
+  left: 50%;
+  bottom: 20%;
 }
 
 .features-slider-control button {
@@ -399,7 +394,7 @@ a {
 }
 
 .info-description {
-  max-width: 651px;
+  max-width: 58%;
 }
 
 .info-description-accent {
@@ -446,7 +441,7 @@ a {
 }
 
 .info-metrics {
-  width: 360px;
+  width: 31%;
 }
 
 .info-metrics h4 {
@@ -514,7 +509,7 @@ a {
 }
 
 .contacts-description {
-  max-width: 320px;
+  width: 28%;
 
   padding-top: 49px;
   padding-right: 50px;
@@ -867,7 +862,8 @@ a {
   width: 50px;
   height: 50px;
 
-  padding: 15px 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 
   font-weight: 500;
   font-size: 16px;
@@ -876,11 +872,13 @@ a {
   color: var(--basic-black);
 }
 
-.pagination-item a:not([href]) {
+.pagination-item .active {
   padding-top: 13px;
+
   background-color: var(--basic-white);
 
   border: solid 3px var(--basic-extra-light);
+  border-radius: 3px;
 }
 
 .next {
