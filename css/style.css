@@ -292,6 +292,7 @@ a {
 
   left: 50%;
   bottom: 20%;
+  transform: translateX(-50%);
 }
 
 .features-slider-control button {
@@ -875,6 +876,8 @@ a {
 .pagination-item .active {
   padding-top: 13px;
 
+  pointer-events: none;
+
   background-color: var(--basic-white);
 
   border: solid 3px var(--basic-extra-light);
@@ -888,6 +891,7 @@ a {
 .pagination-button:hover,
 .pagination-button:focus {
   background-color: var(--special-deep-grey);
+  border-radius: 3px;
 }
 
 .pagination-button:active {
