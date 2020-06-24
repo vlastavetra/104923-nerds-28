@@ -16,7 +16,7 @@
           <ul class="site-navigation">
             <li><a class="nav-link" href="blank.html">Студия</a></li>
             <li><a class="nav-link" href="blank.html">Клиенты</a></li>
-            <li><a class="nav-link active">Магазин</a></li>
+            <li><a class="nav-link nav-link-active">Магазин</a></li>
             <li><a class="nav-link" href="blank.html">Контакты</a></li>
           </ul>
           <div class="user-cart">
@@ -46,9 +46,9 @@
                   <div class="toggle toggle-max"></div>
                 </div>
                 <div class="price-controls">
-                  <label class="min-price">от <input type="number" name="min-price" value="0" step="100">
+                  <label class="min-price">от <input type="text" name="min-price" value="0" step="100">
                   </label>
-                  <label class="max-price">до <input type="number" name="max-price" value="15000" step="100">
+                  <label class="max-price">до <input type="text" name="max-price" value="15 000" step="100">
                   </label>
                 </div>
               </div>
@@ -57,15 +57,15 @@
               <legend class="catalog-filters-title title-grid">Сетка:</legend>
               <ul class="catalog-filters-grid">
                 <li class="filters-grid-item">
-                  <input class="visually-hidden" type="radio" name="grid" value="adaptive" id="filter-adaptive" checked>
+                  <input class="filter-radio-input" type="radio" name="grid" value="adaptive" id="filter-adaptive">
                   <label class="filter-radio-label checked-radio" for="filter-adaptive">Адаптивная</label>
                 </li>
                 <li class="filters-grid-item">
-                  <input class="visually-hidden" type="radio" name="grid" value="fixed" id="filter-fixed">
+                  <input class="filter-radio-input" type="radio" name="grid" value="fixed" id="filter-fixed">
                   <label class="filter-radio-label" for="filter-fixed">Фиксированная</label>
                 </li>
                 <li class="filters-grid-item">
-                  <input class="visually-hidden" type="radio" name="grid" value="fixed" id="filter-rubber">
+                  <input class="filter-radio-input" type="radio" name="grid" value="fixed" id="filter-rubber">
                   <label class="filter-radio-label" for="filter-rubber">Резиновая</label>
                 </li>
               </ul>
@@ -74,23 +74,23 @@
               <legend class="catalog-filters-title title-features">Особенности:</legend>
               <ul class="catalog-filters-features">
                 <li>
-                  <input class="visually-hidden" type="checkbox" name="slider" id="filter-slider" checked>
+                  <input class="filter-checkbox-input" type="checkbox" name="slider" id="filter-slider">
                   <label class="filter-checkbox-label checked-checkbox" for="filter-slider">Слайдер</label>
                 </li>
                 <li>
-                  <input class="visually-hidden" type="checkbox" name="benefits" id="filter-benefits">
+                  <input class="filter-checkbox-input" type="checkbox" name="benefits" id="filter-benefits">
                   <label class="filter-checkbox-label" for="filter-benefits">Блок преимуществ</label>
                 </li>
                 <li>
-                  <input class="visually-hidden" type="checkbox" name="news" id="filter-news" checked>
+                  <input class="filter-checkbox-input" type="checkbox" name="news" id="filter-news" checked>
                   <label class="filter-checkbox-label checked-checkbox" for="filter-news">Новости</label>
                 </li>
                 <li>
-                  <input class="visually-hidden" type="checkbox" name="galery" id="filter-galery">
+                  <input class="filter-checkbox-input" type="checkbox" name="galery" id="filter-galery">
                   <label class="filter-checkbox-label" for="filter-galery">Галерея</label>
                 </li>
                 <li>
-                  <input class="visually-hidden" type="checkbox" name="cart" id="filter-cart">
+                  <input class="filter-checkbox-input" type="checkbox" name="cart" id="filter-cart">
                   <label class="filter-checkbox-label" for="filter-cart">Корзина</label>
                 </li>
               </ul>
