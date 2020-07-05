@@ -1097,8 +1097,6 @@ a {
 .filter-button:hover,
 .filter-button:focus {
   background-color: var(--special-grey-deep);
-
-  outline: none;
 }
 
 .filter-button:active {
@@ -1224,13 +1222,26 @@ a {
   opacity: 0.12;
 }
 
-.catalog-items-card:hover::before {
+.catalog-items-card:hover::before,
+.catalog-items-card:focus::before {
   opacity: 1;
+  box-shadow: 0px 6px 15px 0 rgba(0, 1, 1, 0.25);
+
+  z-index: -1;
 }
 
 .catalog-items-hover {
   display: none;
-  animation: hover 0.4s;
+  animation: hover 0.3s;
+}
+
+.catalog-items-card:hover,
+.catalog-items-card:focus {
+  box-shadow: 0px 6px 15px 0 rgba(0, 1, 1, 0.25);
+}
+
+.catalog-items-card:focus-within .catalog-items-hover {
+  display: block;
 }
 
 .catalog-items-card:hover .catalog-items-hover {
