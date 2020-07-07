@@ -641,7 +641,7 @@ a {
   background-color: var(--basic-extra-light);
 }
 
-.clients-item:last-child::after {
+.clients-item:nth-child(4n)::after {
   content: none;
 }
 
