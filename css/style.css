@@ -68,6 +68,7 @@
 .page-body {
   min-height: 100%;
   display: grid;
+  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;
   align-content: start;
 
@@ -75,7 +76,7 @@
   margin: 0;
   padding: 0;
 
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -90,7 +91,7 @@ a {
   text-decoration: none;
 }
 
-.visually-hidden:not(:focus):not(:active) {
+.visually-hidden {
   position: absolute;
 
   width: 1px;
@@ -165,13 +166,16 @@ a {
   color: var(--basic-black);
 }
 
+.main-header-logo {
+  max-height: 65px;
+}
+
 .main-header-logo:active {
   opacity: 0.3;
 }
 
 .site-navigation {
   display: flex;
-  justify-content: space-between;
   justify-self: center;
   align-items: center;
   flex-wrap: wrap;
@@ -179,25 +183,33 @@ a {
   min-width: 440px;
 
   margin-left: -6px;
-  padding-top: 6px;
+  padding-top: 16px;
 
   list-style: none;
 }
 
 .nav-link {
   position: relative;
+
   display: block;
+
+  margin-left: 47px;
 
   text-transform: uppercase;
 
   color: var(--basic-black);
 }
 
+.site-navigation:first-child {
+  margin-left: 0;
+}
+
 .user-cart {
   position: relative;
 
   min-width: 115px;
-  padding: 5px 0px 0px 76px;
+  padding-top: 16px;
+  padding-left: 76px;
 
   text-align: right;
 }
@@ -253,13 +265,13 @@ a {
 }
 
 .features-description {
-  min-height: 420px;
+  min-height: 431px;
   padding-right: 524px;
   padding-bottom: 70px;
 }
 
 .features-accent {
-  padding-top: 68px;
+  padding-top: 78px;
 
   font-weight: 500;
   font-size: 55px;
@@ -350,7 +362,8 @@ a {
 .services-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 42px;
+  -moz-column-gap: 42px;
+       column-gap: 42px;
 
   list-style: none;
 }
@@ -570,7 +583,7 @@ a {
   position: absolute;
 
   content: "";
-  top: 231px;
+  bottom: 77px;
   left: 20px;
   right: 20px;
 
@@ -580,14 +593,14 @@ a {
 }
 
 .clients-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  -moz-column-gap: 90px;
+       column-gap: 90px;
 
   padding-top: 100px;
-  padding-right: 43px;
-  padding-bottom: 113px;
-  padding-left: 32px;
+  padding-bottom: 115px;
+  padding-left: 30px;
 
   list-style: none;
 }
@@ -600,12 +613,18 @@ a {
   align-items: center;
 }
 
+.clients-html {
+  margin-top: 3px;
+  margin-right: -2px;
+}
+
 .clients-borodinski {
-  margin-left: -27px;
+  margin-top: -3px;
+  margin-left: -10px;
 }
 
 .clients-pink {
-  margin-left: -17px;
+  margin-right: 5px;
 }
 
 .clients-item::after {
@@ -614,7 +633,7 @@ a {
   position: absolute;
 
   top: 15px;
-  right: -50px;
+  right: -32px;
 
   width: 2px;
   height: 52px;
@@ -740,7 +759,8 @@ a {
 .social-buttons-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 
   margin-right: 140px;
 
@@ -790,7 +810,7 @@ a {
 }
 
 .catalog-title {
-  padding-top: 67px;
+  padding-top: 77px;
   padding-bottom: 108px;
 
   background-color: var(--basic-extra-light);
@@ -919,7 +939,7 @@ a {
   padding-top: 5px 10px;
   margin-left: 9px;
 
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
   line-height: 22px;
   text-align: center;
@@ -957,11 +977,6 @@ a {
   margin-bottom: 47px;
 }
 
-.filter-radio-input,
-.filter-checkbox-input {
-  display: none;
-}
-
 .filter-radio-label {
   cursor: pointer;
 
@@ -971,7 +986,7 @@ a {
   padding-left: 36px;
 }
 
-.filter-radio-label::before {
+.filter-radio-input + label::before {
   content: "";
 
   position: absolute;
@@ -989,7 +1004,11 @@ a {
   opacity: 0.4;
 }
 
-.checked-radio::before {
+.filter-radio-input:checked + label::before {
+  display: none;
+}
+
+.filter-radio-input:checked + label::after {
   content: "";
 
   position: absolute;
@@ -1007,12 +1026,15 @@ a {
   opacity: 0.4;
 }
 
-.filter-radio-label:hover::before,
-.filter-radio-label:focus::before {
+.filter-radio-input + label:hover::after,
+.filter-radio-input + label:hover::before,
+.filter-radio-input:focus + label::after,
+.filter-radio-input:focus + label::before {
   opacity: 1;
 }
 
-.filter-radio-label:disabled::before {
+.filter-radio-input:disabled + label::after,
+.filter-radio-input:disabled + label::before {
   opacity: 0.1;
 }
 
@@ -1022,10 +1044,10 @@ a {
   display: block;
 
   padding-top: 3px;
-  padding-left: 34px;
+  padding-left: 35px;
 }
 
-.filter-checkbox-label::before {
+.filter-checkbox-input + label::before {
   content: "";
 
   position: absolute;
@@ -1043,7 +1065,11 @@ a {
   opacity: 0.4;
 }
 
-.checked-checkbox::before {
+.filter-checkbox-input:checked + label::before {
+  display: none;
+}
+
+.filter-checkbox-input:checked + label::after {
   content: "";
 
   position: absolute;
@@ -1061,12 +1087,15 @@ a {
   opacity: 0.4;
 }
 
-.filter-checkbox-label:hover::before,
-.filter-checkbox-label:focus::before {
+.filter-checkbox-input + label:hover::after,
+.filter-checkbox-input + label:hover::before,
+.filter-checkbox-input:focus + label::after,
+.filter-checkbox-input:focus + label::before {
   opacity: 1;
 }
 
-.filter-checkbox-label:disabled::before {
+.filter-checkbox-input:disabled + label::after,
+.filter-checkbox-input:disabled + label::before {
   opacity: 0.1;
 }
 
@@ -1232,7 +1261,8 @@ a {
 
 .catalog-items-hover {
   display: none;
-  animation: hover 0.3s;
+  -webkit-animation: hover 0.3s;
+          animation: hover 0.3s;
 }
 
 .catalog-items-card:hover,
@@ -1377,11 +1407,13 @@ a {
 
 .modal-show {
   display: block;
-  animation: bounce 0.6s;
+  -webkit-animation: bounce 0.6s;
+          animation: bounce 0.6s;
 }
 
 .modal-error {
-  animation: shake 0.6s;
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
 }
 
 .modal-close {
@@ -1529,6 +1561,24 @@ a {
   outline: none;
 }
 
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateX(-2000px);
+  }
+
+  70% {
+    transform: translateX(30px);
+  }
+
+  90% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @keyframes bounce {
   0% {
     transform: translateX(-2000px);
@@ -1544,6 +1594,28 @@ a {
 
   100% {
     transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
   }
 }
 
@@ -1566,6 +1638,15 @@ a {
   60%,
   80% {
     transform: translateX(10px);
+  }
+}
+
+@-webkit-keyframes hover {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
